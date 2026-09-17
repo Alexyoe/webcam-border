@@ -1,12 +1,3 @@
-:root {
-	--frame-width: 1920px;
-	--frame-height: 1080px;
-	--first-color: #fffd00;
-	--second-color: #fffd00;
-	--third-color: #880000;
-	--spin-duration: 15s;
-}
-
 html,
 body {
 	width: 100%;
