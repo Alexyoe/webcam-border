@@ -4,7 +4,8 @@
   "description": "Standalone version of StreamElements overlay `622a533970978232a446043e`.",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild js/main.js --bundle --minify --outfile=js/overlay.min.js",
+    "watch": "esbuild js/main.js --bundle --outfile=js/overlay.min.js --watch"
   },
   "repository": {
     "type": "git",

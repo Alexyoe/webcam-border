@@ -14,7 +14,7 @@ window.OVERLAY_CONFIG = {
 	durationSeconds: 15,
 
 	// Other effects
-	effect: 'snow',
+	effect: 'leaves',
 
 	snow: {
 		flakes: 200,
@@ -30,7 +30,7 @@ window.OVERLAY_CONFIG = {
 		minSize: 8,
 		maxSize: 22,
 		minSpeed: 0.5,
-		maxSpeed: 2,
+		maxSpeed: 3,
 		colors: ['#d35400', '#e67e22', '#f39c12', '#c0392b', '#8e5a2b', '#b8860b']
 	}
 }
