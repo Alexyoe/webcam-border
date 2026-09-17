@@ -1,0 +1,24 @@
+{
+  "name": "animated-webcam-frame",
+  "version": "1.0.0",
+  "description": "Standalone version of StreamElements overlay `622a533970978232a446043e`.",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexyoe/webcam-border.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Alexyoe/webcam-border/issues"
+  },
+  "homepage": "https://github.com/Alexyoe/webcam-border#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
