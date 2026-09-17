@@ -3,9 +3,6 @@
 
 	const config = window.OVERLAY_CONFIG
 
-	console.log('OVERLAY CONFIG:', config)
-	console.log('MODE:', config.mode)
-
 	const root = document.documentElement
 	const spin = document.getElementById('spin')
 
@@ -19,7 +16,7 @@
 	root.style.setProperty('--spin-duration', `${config.durationSeconds}s`)
 
 	// Set color mode
-	if (config.mode === 'rainbow') {
+	if (config.frame === 'rainbow') {
 		spin.style.background = `
       conic-gradient(
         from 0deg,
@@ -34,7 +31,7 @@
         #ff0000
       )
     `
-	} else if (config.mode === 'fire') {
+	} else if (config.frame === 'fire') {
 		spin.style.background = `
       conic-gradient(
         #ff0000,
@@ -44,7 +41,7 @@
         #ff0000
       )
     `
-	} else if (config.mode === 'ice') {
+	} else if (config.frame === 'ice') {
 		spin.style.background = `
       conic-gradient(
         #001aff,
@@ -55,7 +52,7 @@
         #001aff
       )
     `
-	} else if (config.mode === 'purple') {
+	} else if (config.frame === 'purple') {
 		spin.style.background = `
       conic-gradient(
         #ff00ff,
@@ -65,7 +62,7 @@
         #ff00ff
       )
     `
-	} else if (config.mode === 'main') {
+	} else if (config.frame === 'main') {
 		spin.style.background = `
       conic-gradient(
         90deg,

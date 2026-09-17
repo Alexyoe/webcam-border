@@ -1,9 +1,12 @@
+const params = new URLSearchParams(window.location.search)
+
 window.OVERLAY_CONFIG = {
 	width: 1920,
 	height: 1080,
 
 	// "rainbow" or "custom"
-	mode: 'main',
+	frame: 'rainbow',
+	effect: 'leaves',
 
 	// Used when mode is "custom"
 	firstColor: '#fffd00',
@@ -12,9 +15,6 @@ window.OVERLAY_CONFIG = {
 
 	// Speed of rotation
 	durationSeconds: 15,
-
-	// Other effects
-	effect: 'leaves',
 
 	snow: {
 		flakes: 200,
