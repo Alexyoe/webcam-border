@@ -1,15 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Animated Webcam Frame</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="frame" aria-hidden="true">
-      <div id="spin"></div>
-    </div>
-    <script src="overlay.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Webcam Frame</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="frame" aria-hidden="true">
+    <div id="spin"></div>
+  </div>
+  <canvas id="leaves"></canvas>
+  <canvas id="snow"></canvas>
+
+  <script src="config.js"></script>
+  <script src="overlays/frame.js"></script>
+  <script src="overlays/snow.js"></script>
+  <script src="overlays/leaves.js"></script>
+</body>
+
 </html>
