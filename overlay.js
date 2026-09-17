@@ -20,8 +20,7 @@
   const root = document.documentElement;
   const spin = document.getElementById("spin");
 
-  const spinSize =
-    Math.round(Math.hypot(config.width, config.height)) + 5;
+  const spinSize = Math.round(Math.hypot(config.width, config.height)) + 5;
 
   root.style.setProperty("--frame-width", `${config.width}px`);
   root.style.setProperty("--frame-height", `${config.height}px`);
@@ -44,6 +43,37 @@
         #8000ff,
         #ff00ff,
         #ff0000
+      )
+    `;
+  } else if (config.mode === "fire") {
+    spin.style.background = `
+      conic-gradient(
+        #ff0000,
+        #ff6600,
+        #ffff00,
+        #ff6600,
+        #ff0000
+      )
+    `;
+  } else if (config.mode === "ice") {
+    spin.style.background = `
+      conic-gradient(
+        #001aff,
+        #00aaff,
+        #00ffff,
+        #ffffff,
+        #00ffff,
+        #001aff
+      )
+    `;
+  } else if (config.mode === "purple") {
+    spin.style.background = `
+      conic-gradient(
+        #ff00ff,
+        #8000ff,
+        #3300ff,
+        #8000ff,
+        #ff00ff
       )
     `;
   }
