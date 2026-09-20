@@ -5,8 +5,8 @@ window.OVERLAY_CONFIG = {
 	height: 1080,
 
 	// "rainbow" or "custom"
-	frame: 'rainbow',
-	effect: 'leaves',
+	frame: params.get('frame') || 'rainbow',
+	effect: params.get('effect') || 'leaves',
 
 	// Used when mode is "custom"
 	firstColor: '#fffd00',
