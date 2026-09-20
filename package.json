@@ -4,8 +4,12 @@
   "description": "Standalone version of StreamElements overlay `622a533970978232a446043e`.",
   "main": "config.js",
   "scripts": {
-    "build": "esbuild js/main.js --bundle --minify --outfile=js/overlay.min.js",
-    "watch": "esbuild js/main.js --bundle --outfile=js/overlay.min.js --watch"
+    "build:js": "esbuild js/main.js --bundle --minify --outfile=js/overlay.min.js",
+    "build:css": "esbuild style/style.css --minify --outfile=style/style.min.css",
+    "build": "npm run build:js && npm run build:css",
+    "watch:js": "esbuild js/main.js --bundle --outfile=js/overlay.min.js --watch",
+    "watch:css": "esbuild style/style.css --outfile=style/style.min.css --watch",
+    "watch": "concurrently \"npm run watch:js\" \"npm run watch:css\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/Alexyoe/webcam-border#readme",
   "devDependencies": {
+    "concurrently": "^10.0.5",
     "esbuild": "^0.28.2"
   }
 }
