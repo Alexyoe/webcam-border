@@ -71,6 +71,25 @@
         #880000
       )
     `
+	} else if (config.frame === 'chase') {
+		spin.style.background = `
+      conic-gradient(
+        from 0deg,
+  
+        transparent 0deg,
+        transparent 285deg,
+  
+        ${config.firstColor}22 295deg,
+        ${config.firstColor}55 305deg,
+        ${config.firstColor}99 315deg,
+        ${config.secondColor} 330deg,
+        ${config.thirdColor} 342deg,
+        #ffffff 350deg,
+  
+        transparent 355deg,
+        transparent 360deg
+      )
+    `
 	} else {
 		// Custom colors from config.js
 		spin.style.background = `
