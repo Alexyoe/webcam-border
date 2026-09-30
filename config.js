@@ -6,7 +6,7 @@ window.OVERLAY_CONFIG = {
 
 	// "rainbow" or "custom"
 	frame: params.get('frame') || 'main',
-	effect: params.get('effect') || 'bats',
+	effect: params.get('effect') || 'none',
 
 	// Used when mode is "custom"
 	firstColor: '#fffd00',
@@ -36,16 +36,12 @@ window.OVERLAY_CONFIG = {
 
 	bats: {
 		count: 30,
-
 		minSize: 40,
 		maxSize: 80,
-
 		minSpeed: 1,
 		maxSpeed: 3,
-
 		minFlapSpeed: 0.08,
 		maxFlapSpeed: 0.18,
-
 		color: '#050505'
 	}
 }
