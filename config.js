@@ -43,5 +43,19 @@ window.OVERLAY_CONFIG = {
 		minFlapSpeed: 0.08,
 		maxFlapSpeed: 0.18,
 		color: '#050505'
+	},
+
+	// Select with ?effect=bats2 (sizes are full wingspan in pixels).
+	bats2: {
+		count: 24,
+		minSize: 65,
+		maxSize: 130,
+		minSpeed: 1.2,
+		maxSpeed: 3.2,
+		minFlapSpeed: 0.09,
+		maxFlapSpeed: 0.16,
+		color: '#100e18',
+		membraneColor: '#272131',
+		ribColor: '#494050'
 	}
 }
