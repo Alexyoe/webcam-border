@@ -23,4 +23,10 @@ speed, and colors in the `bats2` config block. The original `bats` preset is
 still available with `?effect=bats`.
 
 The package makes no StreamElements requests and uses no external libraries.
+ 
+Use `?effect=xmas-lights` for a glowing, twinkling light string around all four
+edges. Adjust spacing, bulb dimensions, inset, colors, and twinkle in the
+`'xmas-lights'` block in `config.js`. Inspired by
+[Toby J's Pure CSS Christmas Lights](https://codepen.io/tobyj/pen/QjvEex),
+with a continuous perimeter wire and inward-facing bulbs on every side.
 The original mask is stored locally at `assets/frame-mask.png`.

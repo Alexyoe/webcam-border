@@ -46,6 +46,15 @@ window.OVERLAY_CONFIG = {
 	},
 
 	// Select with ?effect=bats2 (sizes are full wingspan in pixels).
+	'xmas-lights': {
+		spacing: 104,
+		bulbWidth: 16,
+		bulbHeight: 32,
+		inset: 10,
+		colors: ['#00f7a5', '#00ffff', '#f70094'],
+		twinkle: true
+	},
+
 	bats2: {
 		count: 24,
 		minSize: 65,
