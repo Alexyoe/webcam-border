@@ -35,17 +35,19 @@ window.OVERLAY_CONFIG = {
 	},
 
 	bats: {
-		count: 30,
-		minSize: 40,
-		maxSize: 80,
-		minSpeed: 1,
-		maxSpeed: 3,
-		minFlapSpeed: 0.08,
-		maxFlapSpeed: 0.18,
-		color: '#050505'
+		count: 15,
+		// Full sprite size, rounded to multiples of 64 for crisp pixels.
+		minSize: 128,
+		maxSize: 192,
+		minSpeed: 2,
+		maxSpeed: 5,
+		minFlapSpeed: 0.15,
+		maxFlapSpeed: 0.22,
+		color: '#202020',
+		outlineColor: '#6b6154',
+		eyeColor: '#ffffff'
 	},
 
-	// Select with ?effect=bats2 (sizes are full wingspan in pixels).
 	'xmas-lights': {
 		spacing: 104,
 		bulbWidth: 16,
@@ -55,6 +57,7 @@ window.OVERLAY_CONFIG = {
 		twinkle: true
 	},
 
+	// Select with ?effect=bats2 (sizes are full wingspan in pixels).
 	bats2: {
 		count: 24,
 		minSize: 65,

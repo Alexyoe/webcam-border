@@ -1,3 +1,7 @@
+import { batFrames } from './bat-sprites.js'
+
+// Pixel art and stepped flap animation adapted from Timothy Guo:
+// https://codepen.io/timothyguo/pen/jbarzP
 ;(() => {
 	'use strict'
 
@@ -12,6 +16,22 @@
 	const canvas = document.getElementById('bats')
 	const ctx = canvas.getContext('2d')
 
+	// Cache each original 64 x 64 frame once, then draw at whole-pixel scales.
+	const palette = { a: config.outlineColor || '#54556b', b: config.color || '#202020', c: config.eyeColor || '#ffffff' }
+	const sprites = batFrames.map(rows => {
+		const sprite = document.createElement('canvas')
+		sprite.width = sprite.height = 64
+		const context = sprite.getContext('2d')
+		rows.forEach((row, y) => {
+			for (let x = 0; x < row.length; x++) {
+				if (!palette[row[x]]) continue
+				context.fillStyle = palette[row[x]]
+				context.fillRect(x, y, 1, 1)
+			}
+		})
+		return sprite
+	})
+	let previousTime
 	let bats = []
 
 	function random(min, max) {
@@ -47,9 +67,7 @@
 
 			// Wing animation
 			wingOffset: random(0, Math.PI * 2),
-			wingSpeed: random(config.minFlapSpeed, config.maxFlapSpeed),
-
-			opacity: random(0.65, 1)
+			wingSpeed: random(config.minFlapSpeed, config.maxFlapSpeed)
 		}
 	}
 
@@ -65,14 +83,14 @@
 		Object.assign(bat, createBat(false))
 	}
 
-	function update() {
+	function update(step) {
 		for (const bat of bats) {
-			bat.x += bat.speed * bat.direction
+			bat.x += bat.speed * bat.direction * step
 
-			bat.bobOffset += bat.bobSpeed
-			bat.wingOffset += bat.wingSpeed
+			bat.bobOffset += bat.bobSpeed * step
+			bat.wingOffset += bat.wingSpeed * step
 
-			bat.y += Math.sin(bat.bobOffset) * bat.bobAmount
+			bat.y += Math.sin(bat.bobOffset) * bat.bobAmount * step
 
 			if (
 				bat.x > canvas.width + bat.size * 3 ||
@@ -86,80 +104,13 @@
 	}
 
 	function drawBat(bat) {
+		const sprite = sprites[Math.floor((bat.wingOffset % (Math.PI * 2)) / (Math.PI * 2) * sprites.length)]
+		const size = Math.max(1, Math.round(bat.size / 64)) * 64
 		ctx.save()
-
-		ctx.translate(bat.x, bat.y)
-
-		// Flip bats flying toward the left
-		if (bat.direction === -1) {
-			ctx.scale(-1, 1)
-		}
-
-		ctx.globalAlpha = bat.opacity
-		ctx.fillStyle = config.color || '#050505'
-
-		const s = bat.size
-
-		/*
-		 * Produces a value between roughly -1 and +1.
-		 * This makes the wings flap.
-		 */
-		const flap = Math.sin(bat.wingOffset)
-
-		const wingY = flap * s * 0.45
-
-		// BODY
-		ctx.beginPath()
-		ctx.ellipse(0, 0, s * 0.18, s * 0.45, 0, 0, Math.PI * 2)
-		ctx.fill()
-
-		// HEAD
-		ctx.beginPath()
-		ctx.arc(0, -s * 0.35, s * 0.17, 0, Math.PI * 2)
-		ctx.fill()
-
-		// LEFT EAR
-		ctx.beginPath()
-		ctx.moveTo(-s * 0.12, -s * 0.45)
-		ctx.lineTo(-s * 0.18, -s * 0.7)
-		ctx.lineTo(-s * 0.02, -s * 0.5)
-		ctx.fill()
-
-		// RIGHT EAR
-		ctx.beginPath()
-		ctx.moveTo(s * 0.12, -s * 0.45)
-		ctx.lineTo(s * 0.18, -s * 0.7)
-		ctx.lineTo(s * 0.02, -s * 0.5)
-		ctx.fill()
-
-		// LEFT WING
-		ctx.beginPath()
-
-		ctx.moveTo(-s * 0.1, -s * 0.15)
-
-		ctx.quadraticCurveTo(-s * 0.65, -s * 0.5 - wingY, -s, wingY)
-
-		ctx.quadraticCurveTo(-s * 0.7, s * 0.05, -s * 0.55, s * 0.3)
-
-		ctx.quadraticCurveTo(-s * 0.35, s * 0.1, -s * 0.1, s * 0.25)
-
-		ctx.closePath()
-		ctx.fill()
-
-		// RIGHT WING
-		ctx.beginPath()
-
-		ctx.moveTo(s * 0.1, -s * 0.15)
-
-		ctx.quadraticCurveTo(s * 0.65, -s * 0.5 - wingY, s, wingY)
-
-		ctx.quadraticCurveTo(s * 0.7, s * 0.05, s * 0.55, s * 0.3)
-
-		ctx.quadraticCurveTo(s * 0.35, s * 0.1, s * 0.1, s * 0.25)
-
-		ctx.closePath()
-		ctx.fill()
-
+		ctx.translate(Math.round(bat.x), Math.round(bat.y))
+		ctx.scale(bat.direction, 1)
+		ctx.imageSmoothingEnabled = false
+		ctx.drawImage(sprite, -size / 2, -size / 2, size, size)
 		ctx.restore()
 	}
 
@@ -171,8 +122,10 @@
 		}
 	}
 
-	function animate() {
-		update()
+	function animate(time) {
+		const step = previousTime === undefined ? 1 : Math.min((time - previousTime) / (1000 / 60), 3)
+		previousTime = time
+		update(step)
 		draw()
 
 		requestAnimationFrame(animate)
@@ -185,5 +138,5 @@
 
 	resize()
 	init()
-	animate()
+	requestAnimationFrame(animate)
 })()

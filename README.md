@@ -19,8 +19,13 @@ gradient stops.
 Select an effect with `index.html?effect=bats2` (or set `effect: 'bats2'` in
 `config.js`). The `bats2` preset uses articulated, scalloped wings with subtle
 membrane ribs, pointed ears, and smooth banking flight. Adjust its count, size,
-speed, and colors in the `bats2` config block. The original `bats` preset is
-still available with `?effect=bats`.
+speed, and colors in the `bats2` config block.
+
+Use `?effect=bats` for the pixel-art bats from
+[Timothy Guo's Bat Pixel Art Animation](https://codepen.io/timothyguo/pen/jbarzP).
+The seven original animation frames are cached locally and drawn with crisp
+pixels. Adjust count, flight/flap speeds, body/outline/eye colors, and size in
+the `bats` config block. Sprite sizes round to multiples of 64 pixels.
 
 The package makes no StreamElements requests and uses no external libraries.
  
