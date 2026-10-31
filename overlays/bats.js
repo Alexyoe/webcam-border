@@ -108,7 +108,8 @@ import { batFrames } from './bat-sprites.js'
 		const size = Math.max(1, Math.round(bat.size / 64)) * 64
 		ctx.save()
 		ctx.translate(Math.round(bat.x), Math.round(bat.y))
-		ctx.scale(bat.direction, 1)
+		// The original sprite faces left, so mirror it for rightward flight.
+		ctx.scale(-bat.direction, 1)
 		ctx.imageSmoothingEnabled = false
 		ctx.drawImage(sprite, -size / 2, -size / 2, size, size)
 		ctx.restore()
