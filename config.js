@@ -64,6 +64,9 @@ window.OVERLAY_CONFIG = {
 		inset: 5,
 		color: '#ff7900',
 		faceColor: '#fff36a',
+		// Alternate pumpkins use this second body/face pair.
+		secondColor: '#3daa34',
+		secondFaceColor: '#aaff66',
 		twinkle: true
 	},
 

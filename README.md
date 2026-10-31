@@ -44,3 +44,5 @@ all four edges, with orange pumpkin ribs, warm yellow faces, and a gentle twinkl
 Adjust spacing, bulb dimensions, inset, body color (`color`), face color, and
 twinkle in the `'halloween-lights'` block in `config.js`. Set `twinkle: false`
 for steady lights. Reduced-motion preferences also disable the twinkle.
+Pumpkins alternate between `color` / `faceColor` and `secondColor` /
+`secondFaceColor` around the perimeter. Set both pairs alike for a single palette.

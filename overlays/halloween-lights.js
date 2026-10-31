@@ -44,6 +44,8 @@
 			wire += ` Q ${length - gap / 4} 5 ${length} 0`
 			element('path', { d: wire, class: 'halloween-wire' }, edge)
 			for (let i = 0; i < count; i++, index++) {
+				const color = index % 2 ? (config.secondColor || config.color) : config.color
+				const faceColor = index % 2 ? (config.secondFaceColor || config.faceColor) : config.faceColor
 				const bulb = element('g', {
 					transform: `translate(${(i + 0.5) * gap} 0) scale(${Math.max(4, config.bulbWidth) / 32} ${Math.max(4, config.bulbHeight) / 26})`
 				}, edge)
@@ -51,14 +53,14 @@
 				const duration = [2.8, 3.4, 2.3, 3.1][index % 4]
 				const lamp = element('g', {
 					class: 'halloween-lamp',
-					style: `color:${config.color};animation-duration:${duration}s;animation-delay:-${(index * 0.37) % duration}s`
+					style: `color:${color};animation-duration:${duration}s;animation-delay:-${(index * 0.37) % duration}s`
 				}, bulb)
 				// Overlapping lobes keep the silhouette round and readable at small sizes.
 				element('ellipse', { cx: -7, cy: 19, rx: 9, ry: 12, fill: 'currentColor' }, lamp)
 				element('ellipse', { cx: 7, cy: 19, rx: 9, ry: 12, fill: 'currentColor' }, lamp)
 				element('ellipse', { cx: 0, cy: 19, rx: 9, ry: 13, fill: 'currentColor' }, lamp)
 				element('path', { d: 'M -7 8 Q -12 19 -7 30 M 7 8 Q 12 19 7 30', fill: 'none', stroke: '#a84400', 'stroke-opacity': 0.45, 'stroke-width': 1.2 }, lamp)
-				element('path', { d: 'M -10 18 L -6 12 L -3 18 Z M 3 18 L 6 12 L 10 18 Z M -10 22 L -5 24 L -5 22 L -1 22 L -1 25 L 3 25 L 3 22 L 7 22 L 7 23 L 10 21 Q 7 31 0 29 Q -7 29 -10 22 Z', fill: config.faceColor, class: 'halloween-face' }, lamp)
+				element('path', { d: 'M -10 18 L -6 12 L -3 18 Z M 3 18 L 6 12 L 10 18 Z M -10 22 L -5 24 L -5 22 L -1 22 L -1 25 L 3 25 L 3 22 L 7 22 L 7 23 L 10 21 Q 7 31 0 29 Q -7 29 -10 22 Z', fill: faceColor, class: 'halloween-face', style: `filter:drop-shadow(0 0 2px ${faceColor})` }, lamp)
 			}
 		}
 	}
