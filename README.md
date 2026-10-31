@@ -16,6 +16,9 @@ Edit `window.OVERLAY_CONFIG` in `config.js`. The original configured
 values are preserved: 1920×1080, a 15-second rotation, and yellow/yellow/dark-red
 gradient stops.
 
+Use `?frame=none` (or set `frame: 'none'` in `config.js`) to hide the frame.
+Other effects still work, for example `?frame=none&effect=halloween-lights`.
+
 Select an effect with `index.html?effect=bats2` (or set `effect: 'bats2'` in
 `config.js`). The `bats2` preset uses articulated, scalloped wings with subtle
 membrane ribs, pointed ears, and smooth banking flight. Adjust its count, size,

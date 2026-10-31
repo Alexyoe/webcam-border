@@ -4,7 +4,7 @@ window.OVERLAY_CONFIG = {
 	width: 1920,
 	height: 1080,
 
-	// "rainbow" or "custom"
+	// "none", "main", "rainbow", "fire", "ice", "purple", "chase", or "custom"
 	frame: params.get('frame') || 'main',
 	effect: params.get('effect') || 'none',
 
@@ -58,10 +58,10 @@ window.OVERLAY_CONFIG = {
 	},
 
 	'halloween-lights': {
-		spacing: 208,
-		bulbWidth: 64,
-		bulbHeight: 52,
-		inset: 10,
+		spacing: 104,
+		bulbWidth: 32,
+		bulbHeight: 26,
+		inset: 5,
 		color: '#ff7900',
 		faceColor: '#fff36a',
 		twinkle: true

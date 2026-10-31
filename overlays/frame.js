@@ -2,6 +2,10 @@
 	'use strict'
 
 	const config = window.OVERLAY_CONFIG
+	if (config.frame === 'none') {
+		document.getElementById('frame').style.display = 'none'
+		return
+	}
 
 	const root = document.documentElement
 	const spin = document.getElementById('spin')
