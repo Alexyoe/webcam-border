@@ -45,6 +45,21 @@
         #ff0000
       )
     `
+	} else if (config.frame === 'halloween') {
+		spin.style.background = `
+      conic-gradient(
+        from 0deg,
+        #080404,
+        #880000,
+        #ff3300,
+        #ff7900,
+        #080404,
+        #880000,
+        #ff3300,
+        #ff7900,
+        #080404
+      )
+    `
 	} else if (config.frame === 'ice') {
 		spin.style.background = `
       conic-gradient(

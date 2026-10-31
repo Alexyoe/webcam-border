@@ -4,7 +4,7 @@ window.OVERLAY_CONFIG = {
 	width: 1920,
 	height: 1080,
 
-	// "none", "main", "rainbow", "fire", "ice", "purple", "chase", or "custom"
+	// "none", "main", "rainbow", "fire", "halloween", "ice", "purple", "chase", or "custom"
 	frame: params.get('frame') || 'main',
 	effect: params.get('effect') || 'none',
 
