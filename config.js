@@ -57,6 +57,16 @@ window.OVERLAY_CONFIG = {
 		twinkle: true
 	},
 
+	'halloween-lights': {
+		spacing: 208,
+		bulbWidth: 64,
+		bulbHeight: 52,
+		inset: 10,
+		color: '#ff7900',
+		faceColor: '#fff36a',
+		twinkle: true
+	},
+
 	// Select with ?effect=bats2 (sizes are full wingspan in pixels).
 	bats2: {
 		count: 24,

@@ -35,3 +35,9 @@ edges. Adjust spacing, bulb dimensions, inset, colors, and twinkle in the
 [Toby J's Pure CSS Christmas Lights](https://codepen.io/tobyj/pen/QjvEex),
 with a continuous perimeter wire and inward-facing bulbs on every side.
 The original mask is stored locally at `assets/frame-mask.png`.
+
+Use `?effect=halloween-lights` for small glowing jack-o'-lantern lights around
+all four edges, with orange pumpkin ribs, warm yellow faces, and a gentle twinkle.
+Adjust spacing, bulb dimensions, inset, body color (`color`), face color, and
+twinkle in the `'halloween-lights'` block in `config.js`. Set `twinkle: false`
+for steady lights. Reduced-motion preferences also disable the twinkle.

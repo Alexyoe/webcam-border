@@ -49,6 +49,44 @@ body {
 }
 
 /* Overlay Styles  */
+#halloween-lights {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 100;
+	overflow: hidden;
+}
+
+.halloween-wire {
+	fill: none;
+	stroke: #222;
+	stroke-width: 2;
+}
+
+.halloween-lamp {
+	filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 9px currentColor);
+	animation: halloween-twinkle 3s ease-in-out infinite;
+}
+
+.halloween-face {
+	filter: drop-shadow(0 0 2px #ffd83d);
+}
+
+@keyframes halloween-twinkle {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.55; }
+}
+
+#halloween-lights.is-steady .halloween-lamp {
+	animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.halloween-lamp { animation: none; }
+}
+
 #xmas-lights {
 	position: absolute;
 	inset: 0;
