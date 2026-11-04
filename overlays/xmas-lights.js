@@ -40,7 +40,7 @@
 			[width - inset, height - inset, w, 180],
 			[inset, height - inset, h, 270]
 		]
-		for (const [x, y, length, angle] of edges) {
+		for (const [x, y, length, angle] of config.sides === 'top' ? edges.slice(0, 1) : edges) {
 			const edge = element('g', { transform: `translate(${x} ${y}) rotate(${angle})` })
 			const count = Math.max(1, Math.round(length / spacing))
 			const gap = length / count

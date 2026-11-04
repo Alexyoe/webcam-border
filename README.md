@@ -44,6 +44,8 @@ The original mask is stored locally at `assets/frame-mask.png`.
 
 Both light effects support `wireColor` and `holderColor` in their config blocks.
 Halloween lights also support `holderOutlineColor` for the holder's border.
+Set `sides: 'top'` in either light effect's config block for lights along only
+the top edge, or `sides: 'all'` (the default) for all four edges.
 
 Use `?effect=halloween-lights` for small glowing jack-o'-lantern lights around
 all four edges, with orange pumpkin ribs, warm yellow faces, and a gentle twinkle.

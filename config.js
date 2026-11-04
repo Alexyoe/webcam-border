@@ -49,6 +49,7 @@ window.OVERLAY_CONFIG = {
 	},
 
 	'xmas-lights': {
+		sides: 'top', // 'all' or 'top'
 		wireColor: '#222222',
 		holderColor: '#222222',
 		spacing: 104,
@@ -60,6 +61,7 @@ window.OVERLAY_CONFIG = {
 	},
 
 	'halloween-lights': {
+		sides: 'all', // 'all' or 'top'
 		wireColor: '#222222',
 		holderColor: '#344321',
 		holderOutlineColor: '#1d2916',

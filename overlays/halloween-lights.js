@@ -28,12 +28,13 @@
 		const spacing = Math.max(40, config.spacing, config.bulbWidth * 1.5)
 		let index = 0
 		// Rotate each edge so the pumpkins point into the frame, like the Christmas lights.
-		for (const [x, y, length, angle] of [
+		const edges = [
 			[inset, inset, w, 0],
 			[width - inset, inset, h, 90],
 			[width - inset, height - inset, w, 180],
 			[inset, height - inset, h, 270]
-		]) {
+		]
+		for (const [x, y, length, angle] of config.sides === 'top' ? edges.slice(0, 1) : edges) {
 			const edge = element('g', { transform: `translate(${x} ${y}) rotate(${angle})` })
 			const count = Math.max(1, Math.round(length / spacing))
 			const gap = length / count
