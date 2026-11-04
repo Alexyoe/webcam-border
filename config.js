@@ -77,6 +77,19 @@ window.OVERLAY_CONFIG = {
 		twinkle: true
 	},
 
+	'autumn-lights': {
+		sides: 'top', // 'all' or 'top'
+		wireColor: '#493322',
+		holderColor: '#6b492b',
+		spacing: 104,
+		bulbWidth: 32,
+		bulbHeight: 38,
+		inset: 7,
+		colors: ['#e87924', '#eebc38', '#c94b32', '#b98532'],
+		veinColor: '#79401f',
+		twinkle: true
+	},
+
 	// Select with ?effect=bats2 (sizes are full wingspan in pixels).
 	bats2: {
 		count: 24,

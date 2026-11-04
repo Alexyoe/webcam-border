@@ -87,7 +87,8 @@ body {
 	.halloween-lamp { animation: none; }
 }
 
-#xmas-lights {
+#xmas-lights,
+#autumn-lights {
 	position: absolute;
 	inset: 0;
 	width: 100%;
@@ -97,7 +98,8 @@ body {
 	overflow: hidden;
 }
 
-.xmas-wire {
+.xmas-wire,
+.autumn-wire {
 	fill: none;
 	stroke: var(--wire-color, #222);
 	stroke-width: 2;
@@ -106,6 +108,15 @@ body {
 .xmas-lamp {
 	filter: drop-shadow(0 3px 6px currentColor) drop-shadow(0 0 10px currentColor);
 	animation: xmas-twinkle 2s ease-in-out infinite;
+}
+
+.autumn-lamp {
+	filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
+	animation: xmas-twinkle 3s ease-in-out infinite;
+}
+
+#autumn-lights.is-steady .autumn-lamp {
+	animation: none;
 }
 
 @keyframes xmas-twinkle {
@@ -118,7 +129,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.xmas-lamp { animation: none; }
+	.xmas-lamp, .autumn-lamp { animation: none; }
 }
 
 #snow,

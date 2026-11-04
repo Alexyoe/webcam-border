@@ -1,5 +1,11 @@
 # Animated Webcam Frame
 
+Use `?effect=autumn-lights` for glowing maple-leaf lights in orange, gold,
+rust, and amber. Combine with `?frame=none&effect=autumn-lights` for lights alone.
+The `'autumn-lights'` block in `config.js` controls `sides` (`'all'` or `'top'`),
+spacing, bulb dimensions, inset, leaf `colors`, `veinColor`, `wireColor`,
+`holderColor`, and `twinkle`. Reduced-motion preferences disable twinkling.
+
 Standalone version of StreamElements overlay `622a533970978232a446043e`.
 
 ## Use in OBS
