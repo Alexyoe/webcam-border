@@ -7,6 +7,7 @@
 	svg.id = 'halloween-lights'
 	svg.setAttribute('aria-hidden', 'true')
 	svg.classList.toggle('is-steady', !config.twinkle)
+	svg.style.setProperty('--wire-color', config.wireColor || '#222')
 	document.body.appendChild(svg)
 
 	function element(name, attributes, parent = svg) {
@@ -49,7 +50,7 @@
 				const bulb = element('g', {
 					transform: `translate(${(i + 0.5) * gap} 0) scale(${Math.max(4, config.bulbWidth) / 32} ${Math.max(4, config.bulbHeight) / 26})`
 				}, edge)
-				element('path', { d: 'M -3 -3 L 3 -3 L 4 8 L -4 8 Z', fill: '#344321', stroke: '#1d2916', 'stroke-width': 1 }, bulb)
+				element('path', { d: 'M -3 -3 L 3 -3 L 4 8 L -4 8 Z', fill: config.holderColor || '#344321', stroke: config.holderOutlineColor || '#1d2916', 'stroke-width': 1 }, bulb)
 				const duration = [2.8, 3.4, 2.3, 3.1][index % 4]
 				const lamp = element('g', {
 					class: 'halloween-lamp',

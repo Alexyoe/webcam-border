@@ -42,6 +42,9 @@ edges. Adjust spacing, bulb dimensions, inset, colors, and twinkle in the
 with a continuous perimeter wire and inward-facing bulbs on every side.
 The original mask is stored locally at `assets/frame-mask.png`.
 
+Both light effects support `wireColor` and `holderColor` in their config blocks.
+Halloween lights also support `holderOutlineColor` for the holder's border.
+
 Use `?effect=halloween-lights` for small glowing jack-o'-lantern lights around
 all four edges, with orange pumpkin ribs, warm yellow faces, and a gentle twinkle.
 Adjust spacing, bulb dimensions, inset, body color (`color`), face color, and

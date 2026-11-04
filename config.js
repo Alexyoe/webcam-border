@@ -49,19 +49,24 @@ window.OVERLAY_CONFIG = {
 	},
 
 	'xmas-lights': {
+		wireColor: '#222222',
+		holderColor: '#222222',
 		spacing: 104,
 		bulbWidth: 16,
 		bulbHeight: 32,
-		inset: 10,
-		colors: ['#00f7a5', '#00ffff', '#f70094'],
+		inset: 5,
+		colors: ['#f70000', '#0fcc28', '#ffff'],
 		twinkle: true
 	},
 
 	'halloween-lights': {
+		wireColor: '#222222',
+		holderColor: '#344321',
+		holderOutlineColor: '#1d2916',
 		spacing: 104,
 		bulbWidth: 32,
 		bulbHeight: 26,
-		inset: 5,
+		inset: 7,
 		color: '#ff7900',
 		faceColor: '#fff36a',
 		// Alternate pumpkins use this second body/face pair.

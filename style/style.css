@@ -61,7 +61,7 @@ body {
 
 .halloween-wire {
 	fill: none;
-	stroke: #222;
+	stroke: var(--wire-color, #222);
 	stroke-width: 2;
 }
 
@@ -99,7 +99,7 @@ body {
 
 .xmas-wire {
 	fill: none;
-	stroke: #222;
+	stroke: var(--wire-color, #222);
 	stroke-width: 2;
 }
 

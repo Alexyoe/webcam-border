@@ -10,6 +10,7 @@
 	svg.id = 'xmas-lights'
 	svg.setAttribute('aria-hidden', 'true')
 	svg.classList.toggle('is-steady', !config.twinkle)
+	svg.style.setProperty('--wire-color', config.wireColor || '#222')
 	document.body.appendChild(svg)
 
 	function element(name, attributes, parent = svg) {
@@ -62,7 +63,7 @@
 				}, bulb)
 				element('ellipse', { cx: 0, cy: bulbHeight / 2 + 3, rx: bulbWidth / 2, ry: bulbHeight / 2, fill: 'currentColor' }, lamp)
 				element('ellipse', { cx: -bulbWidth * 0.15, cy: bulbHeight * 0.36 + 3, rx: bulbWidth * 0.12, ry: bulbHeight * 0.2, fill: '#fff', opacity: 0.65 }, lamp)
-				element('rect', { x: -bulbWidth / 2 + 1, y: -3, width: bulbWidth - 2, height: 8, rx: 2, fill: '#222' }, bulb)
+				element('rect', { x: -bulbWidth / 2 + 1, y: -3, width: bulbWidth - 2, height: 8, rx: 2, fill: config.holderColor || '#222' }, bulb)
 			}
 		}
 	}
