@@ -4,9 +4,21 @@ window.OVERLAY_CONFIG = {
 	width: 1920,
 	height: 1080,
 
-	// "none", "main", "rainbow", "fire", "halloween", "ice", "purple", "chase", or "custom"
+	// "none", "main", "rainbow", "fire", "halloween", "ice", "purple", "chase", "win98", or "custom"
 	frame: params.get('frame') || 'main',
-	effect: params.get('effect') || 'none',
+	// Comma-separated effects, e.g. 'snow,xmas-lights'. URL overrides this value.
+	effect: params.get('effect') ?? 'none',
+
+	win98: {
+		title: 'The Yoedog Show - Live!',
+		borderWidth: 16,
+		titleBarHeight: 52,
+		fontSize: 64,
+		buttonSize: 44, // Button height in pixels
+		buttonWidth: 48,
+		gradientStart: '#000080',
+		gradientEnd: '#1084d0'
+	},
 
 	// Used when mode is "custom"
 	firstColor: '#fffd00',
@@ -104,3 +116,12 @@ window.OVERLAY_CONFIG = {
 		ribColor: '#494050'
 	}
 }
+
+window.OVERLAY_CONFIG.effects = [
+	...new Set(
+		window.OVERLAY_CONFIG.effect
+			.split(',')
+			.map(effect => effect.trim())
+			.filter(effect => effect && effect !== 'none')
+	)
+]

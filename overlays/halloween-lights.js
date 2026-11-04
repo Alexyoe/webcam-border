@@ -1,6 +1,6 @@
 ;(() => {
 	'use strict'
-	if (window.OVERLAY_CONFIG.effect !== 'halloween-lights') return
+	if (!window.OVERLAY_CONFIG.effects.includes('halloween-lights')) return
 
 	const config = window.OVERLAY_CONFIG['halloween-lights']
 	const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')

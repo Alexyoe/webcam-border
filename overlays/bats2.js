@@ -1,9 +1,9 @@
 ;(() => {
 	'use strict'
-	if (window.OVERLAY_CONFIG.effect !== 'bats2') return
+	if (!window.OVERLAY_CONFIG.effects.includes('bats2')) return
 
 	const config = window.OVERLAY_CONFIG.bats2
-	const canvas = document.getElementById('bats')
+	const canvas = document.getElementById('bats2')
 	const ctx = canvas.getContext('2d')
 	const random = (min, max) => min + Math.random() * (max - min)
 	let bats = []

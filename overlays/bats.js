@@ -7,7 +7,7 @@ import { batFrames } from './bat-sprites.js'
 
 	const overlayConfig = window.OVERLAY_CONFIG
 
-	if (overlayConfig.effect !== 'bats') {
+	if (!overlayConfig.effects.includes('bats')) {
 		return
 	}
 

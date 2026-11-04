@@ -4,7 +4,7 @@
   const overlayConfig = window.OVERLAY_CONFIG;
 
   // Don't run snow unless enabled
-  if (overlayConfig.effect !== "snow") {
+  if (!overlayConfig.effects.includes("snow")) {
     return;
   }
 

@@ -6,6 +6,40 @@
 		document.getElementById('frame').style.display = 'none'
 		return
 	}
+	if (config.frame === 'win98') {
+		const frame = document.getElementById('frame')
+		frame.classList.add('win98-frame')
+		for (const [property, value, fallback, minimum] of [
+			['--win98-border', config.win98.borderWidth, 8, 2],
+			['--win98-title-height', config.win98.titleBarHeight, 32, 16],
+			['--win98-font-size', config.win98.fontSize, 16, 8],
+			['--win98-button-size', config.win98.buttonSize, 22, 12],
+			['--win98-button-width', config.win98.buttonWidth ?? config.win98.buttonSize, 22, 12]
+		]) {
+			frame.style.setProperty(property, `${Math.max(minimum, Number.isFinite(value) ? value : fallback)}px`)
+		}
+		frame.style.setProperty('--win98-gradient-start', config.win98.gradientStart || '#000080')
+		frame.style.setProperty('--win98-gradient-end', config.win98.gradientEnd || '#1084d0')
+		frame.replaceChildren()
+		const titlebar = document.createElement('div')
+		titlebar.className = 'win98-titlebar'
+		const icon = document.createElement('span')
+		icon.className = 'win98-icon'
+		icon.setAttribute('aria-hidden', 'true')
+		const title = document.createElement('span')
+		title.className = 'win98-title'
+		title.textContent = config.win98.title
+		const controls = document.createElement('div')
+		controls.className = 'win98-controls'
+		for (const name of ['minimize', 'maximize', 'close']) {
+			const button = document.createElement('span')
+			button.className = `win98-button win98-${name}`
+			controls.appendChild(button)
+		}
+		titlebar.append(icon, title, controls)
+		frame.appendChild(titlebar)
+		return
+	}
 
 	const root = document.documentElement
 	const spin = document.getElementById('spin')

@@ -1,6 +1,6 @@
 ;(() => {
 	'use strict'
-	if (window.OVERLAY_CONFIG.effect !== 'autumn-lights') return
+	if (!window.OVERLAY_CONFIG.effects.includes('autumn-lights')) return
 
 	const config = window.OVERLAY_CONFIG['autumn-lights']
 	const ns = 'http://www.w3.org/2000/svg'

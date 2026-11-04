@@ -4,7 +4,7 @@
 	const overlayConfig = window.OVERLAY_CONFIG
 
 	// Only run when leaves are enabled
-	if (overlayConfig.effect !== 'leaves') {
+	if (!overlayConfig.effects.includes('leaves')) {
 		return
 	}
 

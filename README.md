@@ -18,6 +18,24 @@ You can also enable **Local file** in OBS and select `index.html` directly.
 
 ## Customize
 
+Use `?frame=win98` for a Windows 98-style beveled window border and blue
+title bar with decorative minimize, maximize, and close buttons. The camera
+opening stays transparent and the frame fits the browser source dimensions.
+Edit `win98.title` in `config.js` to change the title. Size settings in the same
+block are `borderWidth`, `titleBarHeight`, `fontSize`, `buttonSize` (height),
+and `buttonWidth`, all in
+pixels. The title bar grows as needed to fit the text and buttons.
+Customize the title-bar gradient with `win98.gradientStart` and `win98.gradientEnd`.
+Combine it with effects, for example `?frame=win98&effect=snow`.
+
+Stack effects with commas in the URL, for example
+`index.html?effect=snow,xmas-lights` or
+`index.html?frame=none&effect=leaves,autumn-lights`.
+Single-effect URLs still work. Use `?effect=none` to disable all effects.
+You can also set `effect: 'snow,xmas-lights'` in `config.js`.
+Canvas effects render in this order (back to front): leaves, snow, bats, bats2.
+Light strings render above the canvas effects; URL order does not change layering.
+
 Edit `window.OVERLAY_CONFIG` in `config.js`. The original configured
 values are preserved: 1920×1080, a 15-second rotation, and yellow/yellow/dark-red
 gradient stops.

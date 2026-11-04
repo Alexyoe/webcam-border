@@ -2,7 +2,7 @@
 // https://codepen.io/tobyj/pen/QjvEex
 ;(() => {
 	'use strict'
-	if (window.OVERLAY_CONFIG.effect !== 'xmas-lights') return
+	if (!window.OVERLAY_CONFIG.effects.includes('xmas-lights')) return
 
 	const config = window.OVERLAY_CONFIG['xmas-lights']
 	const ns = 'http://www.w3.org/2000/svg'
